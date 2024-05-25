@@ -49,7 +49,14 @@ export class TetrisService {
   }
 
   private sendGameStatus(client: TetrisGameParam) {
-    client.socket.emit(GameEvents.GAME_STATUS_EVENT, client.status);
+    client.socket.emit(GameEvents.GAME_STATUS_EVENT, {
+      status: client.status,
+      rows: client.rows,
+      level: client.level,
+      dropTime: client.interval,
+      point: client.point,
+      claimable: client.isClaimable,
+    });
   }
 
   private sendGamePoint(client: TetrisGameParam) {

@@ -37,7 +37,7 @@ export class AuthenService {
       domain: {
         name: 'stark-arcade',
         version: '1',
-        chainId: shortString.encodeShortString('SN_MAIN'),
+        chainId: shortString.encodeShortString('SN_SEPOLIA'),
       },
       message: {
         address: formatAddress,
